@@ -10,8 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
-    gap: 2rem;
     height: 100vh;
 
 
@@ -25,9 +23,10 @@ body {
 section{
     text-align: center;
     width: 50%;
-    background-color: #F9BA97;
+    /*background-color: #F9BA97;*/
     border-radius: 7px;
-    height:50vh;
+    height:58vh;
+    border: 1px solid black;
 
 
     
@@ -37,12 +36,18 @@ h1{
     font-family: cursive;
     font-weight: 800;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
 }
-p{
+p.p1{
     font-size: xx-large;
     text-align: center;
-    color:coral;
+    color:rgb(157, 165, 42);
+    margin-top: -10px;
+}
+.start,.finish{
+    color: red;
+    font-size: 2rem;
+    font-weight: 800;
 }
 input{
     border-radius: 10px;
@@ -87,13 +92,20 @@ button:active{
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
-    margin-top: 1rem;
+    margin-top:-15px;
     padding: 1rem;
+
 }
 
 .images{
-    height: calc(100vh - 600px);
+    height: 40vh;
     margin-top: 1.5rem;
+    border: 1px solid black;
+}
+
+.audio{
+    height: 10vh;
+    border: 1px solid black;
 }
 
 

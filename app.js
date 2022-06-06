@@ -33,7 +33,7 @@ console.log(typeof attemptLeft);
 checkButton.addEventListener("click",()=>{
     
 
-    if(attemptLeft>0){
+    if(attemptLeft>1){
         
 
         let guess=Number(inputValue.value);
@@ -45,7 +45,7 @@ checkButton.addEventListener("click",()=>{
             if(guess < 0 || guess > 100){
 
                 
-                //attemptLeft --;
+                attemptLeft --;
                 console.log(attemptLeft)
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
             }
