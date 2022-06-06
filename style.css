@@ -54,6 +54,7 @@ input{
     color: brown;
     height: 30px;
     font-size: 20px;
+    width: 10rem;
     
 
 }
@@ -92,4 +93,17 @@ button:active{
 
 .images{
     height: calc(100vh - 600px);
+    margin-top: 1.5rem;
+}
+
+
+
+@media (max-width:768px){
+    .images{
+        display: none;
+    }
+    .controller{
+        
+        display: inline-block;
+    }
 }
