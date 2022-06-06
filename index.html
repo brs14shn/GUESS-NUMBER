@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <section>
+        <h1>
+            Guess The Number
+        </h1>
+        <p class="p1">Please enter a number between <span class="start">1</span>-<span class="finish">100</span> </p>
+
+        <input type="text" class="number" id="number" maxlength="5" />
+
+        <div class="controller">
+            <button class="submit">Check</button>
+            <button class="new_game">New Game</button>
+        </div>
+
+        <h3 class="message"></h3>
+        <p class="attempt_left">Total attempt is <span>7</span></p>
+        </div>
+    </section>
+
+    <div class="audio">
+        <audio id="applause" src="./voices/mixkit-audience-light-applause-354.wav"></audio>
+        <audio id="up" src="./voices/mixkit-uplifting-bells-notification-938.wav"></audio>
+        <audio id="dow" src="./voices/mixkit-unlock-game-notification-253.wav"></audio>
+        <audio id="loser" src="./voices/mixkit-player-losing-or-failing-2042.wav"></audio>
+    </div>
+
+
+
+    <script src="app.js">
+
+    </script>
+</body>
+
+</html>
