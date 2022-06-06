@@ -18,6 +18,7 @@ const message=document.querySelector(".message");
 
 
 
+
 console.log(Number(spanFinish));
 
 const randomNumber = Math.floor(Math.random()*100+1);
