@@ -12,6 +12,7 @@ body {
     align-items: center;
     margin-top: 1rem;
     gap: 2rem;
+    height: 100vh;
 
 
   }
@@ -26,7 +27,7 @@ section{
     width: 50%;
     background-color: #F9BA97;
     border-radius: 7px;
-    height:60vh;
+    height:50vh;
 
 
     
@@ -87,4 +88,8 @@ button:active{
     color: #fff;
     margin-top: 1rem;
     padding: 1rem;
+}
+
+.images{
+    height: calc(100vh - 600px);
 }

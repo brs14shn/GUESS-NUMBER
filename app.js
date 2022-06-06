@@ -16,6 +16,7 @@ let attemptLeft=+(document.querySelector(".attempt_left span").textContent);
 
 const message=document.querySelector(".message");
 
+let image=document.getElementById("image");
 
 
 
@@ -33,8 +34,7 @@ checkButton.addEventListener("click",()=>{
     
 
     if(attemptLeft>0){
-        attemptLeft--;
-        document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+        
 
         let guess=Number(inputValue.value);
 
@@ -42,35 +42,39 @@ checkButton.addEventListener("click",()=>{
 
         
 
-      if(guess < 0 || guess > 100){
+            if(guess < 0 || guess > 100){
 
-          
-           //attemptLeft --;
-           console.log(attemptLeft)
-           document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-       }
-       else if(guess==randomNumber){
-           message.innerHTML="You win";
-           body.style.backgroundColor="#52BE80";
-       }
-       else if(guess>randomNumber){
-        attemptLeft--;
-        document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-        
-        document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
-        console.log("jkfghkdfgfdjgdf");
-        
-       
-       }
-       else if(guess<randomNumber){
-        attemptLeft--;
-        document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-        document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
-        console.log("aaaaaaa");
-       
-       }
+                
+                //attemptLeft --;
+                console.log(attemptLeft)
+                document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+            }
+            else if(guess==randomNumber){
+                message.innerHTML="You win";
+                body.style.backgroundColor="#52BE80";
+                document.querySelector(".attempt_left").style.display="none"
+                image.src="https://w7.pngwing.com/pngs/405/976/png-transparent-comic-characters-hello-man-smile-thumbnail.png";
+                image.style.width="300px"
 
-}
+            }
+            else if(guess>randomNumber){
+                attemptLeft--;
+                document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+                
+                document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
+                console.log("jkfghkdfgfdjgdf");
+                
+            
+            }
+            else if(guess<randomNumber){
+                attemptLeft--;
+                document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+                document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
+                console.log("aaaaaaa");
+            
+            }
+
+        }
 
 
 
@@ -94,7 +98,10 @@ checkButton.addEventListener("click",()=>{
 
 })
 
+newGame.addEventListener("click", () => {
+    window.location.reload(false);
 
+});
 
 
 
