@@ -1,7 +1,8 @@
 
 // * =====================SELECTOR=======================*
+let body=document.querySelector("body");    
 
-let inputValue = +(document.getElementById("number").value);
+let inputValue = document.getElementById("number");
 
 let spanStart=document.getElementsByTagName("span")[0].textContent;
 
@@ -20,7 +21,7 @@ const message=document.querySelector(".message");
 
 
 console.log(Number(spanFinish));
-
+//* ======================RANDOM NUMBER=======================*
 const randomNumber = Math.floor(Math.random()*100+1);
 
 console.log(randomNumber);
@@ -32,31 +33,39 @@ checkButton.addEventListener("click",()=>{
     
 
     if(attemptLeft>0){
+        attemptLeft--;
+        document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+
+        let guess=Number(inputValue.value);
+
         
 
-      if(inputValue < 0 || inputValue > 100){
+        
 
-           alert("geçerli bir sayı giriniz");
+      if(guess < 0 || guess > 100){
+
+          
            //attemptLeft --;
            console.log(attemptLeft)
            document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
        }
-       else if(inputValue==randomNumber){
-           console.log("tebrikler")
+       else if(guess==randomNumber){
+           message.innerHTML="You win";
+           body.style.backgroundColor="#52BE80";
        }
-       else if(inputValue>randomNumber){
+       else if(guess>randomNumber){
         attemptLeft--;
         document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-        spanFinish = inputValue;
-        spanFinish.innerHTML = `(${inputValue})`;
+        
+        document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
         console.log("jkfghkdfgfdjgdf");
+        
        
        }
-       else if(inputValue<randomNumber){
+       else if(guess<randomNumber){
         attemptLeft--;
         document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-        spanStart = inputValue;
-        spanStart.innerHTML = `(${inputValue})`;
+        document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
         console.log("aaaaaaa");
        
        }
@@ -64,7 +73,7 @@ checkButton.addEventListener("click",()=>{
 }
 
 
-/*
+
     else{
         message.innerHTML= "Game Over! Dont give up.";
         checkButton.disabled=true;
@@ -75,7 +84,7 @@ checkButton.addEventListener("click",()=>{
     }
 
     
-*/
+
 
 
 
