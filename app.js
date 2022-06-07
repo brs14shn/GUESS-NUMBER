@@ -27,7 +27,7 @@ let loser=document.getElementById("loser");
 
 
 
-console.log(Number(spanFinish));
+
 //* ======================RANDOM NUMBER=======================*
 const randomNumber = Math.floor(Math.random()*100+1);
 
@@ -37,10 +37,6 @@ console.log(typeof attemptLeft);
 
 
 checkButton.addEventListener("click",()=>{
-
-  
-
-    
 
     if(attemptLeft>1){
         
@@ -63,12 +59,13 @@ checkButton.addEventListener("click",()=>{
                 image.style.width="200px"
                 image.style.height="200px"
                 win.play(); 
+                inputValue.disabled=true;
 
             }
             else if(guess>randomNumber){
                
                 attemptLeft--;
-                document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+                document.querySelector(".attempt_left").innerHTML=`You have ${attemptLeft} guess right` ;
                 document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
                 toggler.play(); 
                 
@@ -76,7 +73,7 @@ checkButton.addEventListener("click",()=>{
             else if(guess<randomNumber){
                
                 attemptLeft--;
-                document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
+                document.querySelector(".attempt_left").innerHTML=`You have ${attemptLeft} guess right`;
                 document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
                 toggler.play(); 
             }
@@ -94,6 +91,7 @@ checkButton.addEventListener("click",()=>{
   
         //GAMEOVER
     }
+    inputValue.value="";
 
     
 
