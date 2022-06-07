@@ -31,6 +31,9 @@ console.log(typeof attemptLeft);
 
 
 checkButton.addEventListener("click",()=>{
+
+  
+
     
 
     if(attemptLeft>1){
@@ -43,6 +46,7 @@ checkButton.addEventListener("click",()=>{
         
 
             if(guess < 0 || guess > 100){
+               
 
                 
                 attemptLeft --;
@@ -50,6 +54,7 @@ checkButton.addEventListener("click",()=>{
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
             }
             else if(guess==randomNumber){
+               
                 message.innerHTML="You win";
                 body.style.backgroundColor="#52BE80";
                 document.querySelector(".attempt_left").style.display="none"
@@ -58,30 +63,37 @@ checkButton.addEventListener("click",()=>{
 
             }
             else if(guess>randomNumber){
+               
                 attemptLeft--;
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
                 
                 document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
                 console.log("jkfghkdfgfdjgdf");
+              
                 
             
             }
             else if(guess<randomNumber){
+               
                 attemptLeft--;
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
                 document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
                 console.log("aaaaaaa");
+              
             
             }
 
         }
+   
 
 
 
     else{
+        attemptLeft--;
         message.innerHTML= "Game Over! Dont give up.";
         checkButton.disabled=true;
         inputValue.disabled=true;
+       
 
        
         //GAMEOVER
@@ -100,8 +112,17 @@ checkButton.addEventListener("click",()=>{
 
 newGame.addEventListener("click", () => {
     window.location.reload(false);
+    inputValue.focus();
 
 });
+
+
+inputValue.addEventListener("keydown",(event)=>{
+    if(event.keycode==13){
+      checkButton.onclick();
+    }
+  
+  });
 
 
 

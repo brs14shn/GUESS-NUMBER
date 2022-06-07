@@ -26,7 +26,7 @@ section{
     /*background-color: #F9BA97;*/
     border-radius: 7px;
     height:58vh;
-    border: 1px solid black;
+   
 
 
     
@@ -52,7 +52,7 @@ p.p1{
 input{
     border-radius: 10px;
     padding:8px 0px;
-    box-shadow:inset 4px 4px 2px black;
+   
     text-indent: .5rem;
     text-align: center;
     outline:none;
