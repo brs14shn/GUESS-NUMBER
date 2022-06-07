@@ -18,6 +18,8 @@ const message=document.querySelector(".message");
 
 let image=document.getElementById("image");
 
+let loser=document.getElementById("loser")
+
 
 
 
@@ -41,14 +43,8 @@ checkButton.addEventListener("click",()=>{
 
         let guess=Number(inputValue.value);
 
-        
-
-        
-
             if(guess < 0 || guess > 100){
                
-
-                
                 attemptLeft --;
                 console.log(attemptLeft)
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
@@ -59,7 +55,8 @@ checkButton.addEventListener("click",()=>{
                 body.style.backgroundColor="#52BE80";
                 document.querySelector(".attempt_left").style.display="none"
                 image.src="https://w7.pngwing.com/pngs/405/976/png-transparent-comic-characters-hello-man-smile-thumbnail.png";
-                image.style.width="300px"
+                image.style.width="200px"
+                image.style.height="200px"
 
             }
             else if(guess>randomNumber){
@@ -68,44 +65,30 @@ checkButton.addEventListener("click",()=>{
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
                 
                 document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
-                console.log("jkfghkdfgfdjgdf");
-              
                 
-            
             }
             else if(guess<randomNumber){
                
                 attemptLeft--;
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
                 document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
-                console.log("aaaaaaa");
-              
-            
             }
 
         }
    
-
-
-
     else{
         attemptLeft--;
         message.innerHTML= "Game Over! Dont give up.";
         checkButton.disabled=true;
         inputValue.disabled=true;
-       
-
-       
+        
+        document.querySelector(".attempt_left").style.display="none";
+        audio.play(); 
+  
         //GAMEOVER
     }
 
     
-
-
-
-
-
-
 
 
 })
@@ -115,6 +98,8 @@ newGame.addEventListener("click", () => {
     inputValue.focus();
 
 });
+
+
 
 
 inputValue.addEventListener("keydown",(event)=>{
