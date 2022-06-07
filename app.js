@@ -18,7 +18,11 @@ const message=document.querySelector(".message");
 
 let image=document.getElementById("image");
 
-let loser=document.getElementById("loser")
+let win=document.getElementById("win");
+
+let toggler=document.getElementById("toggler");
+
+let loser=document.getElementById("loser");
 
 
 
@@ -44,6 +48,7 @@ checkButton.addEventListener("click",()=>{
         let guess=Number(inputValue.value);
 
             if(guess < 0 || guess > 100){
+                alert("Please enter valid a number")
                
                 attemptLeft --;
                 console.log(attemptLeft)
@@ -57,14 +62,15 @@ checkButton.addEventListener("click",()=>{
                 image.src="https://w7.pngwing.com/pngs/405/976/png-transparent-comic-characters-hello-man-smile-thumbnail.png";
                 image.style.width="200px"
                 image.style.height="200px"
+                win.play(); 
 
             }
             else if(guess>randomNumber){
                
                 attemptLeft--;
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
-                
                 document.getElementsByTagName("span")[1].innerHTML = `${guess}`;
+                toggler.play(); 
                 
             }
             else if(guess<randomNumber){
@@ -72,6 +78,7 @@ checkButton.addEventListener("click",()=>{
                 attemptLeft--;
                 document.querySelector(".attempt_left").innerHTML=`Total attempt is ${attemptLeft}`;
                 document.getElementsByTagName("span")[0].innerHTML = `${guess}`;
+                toggler.play(); 
             }
 
         }
@@ -81,9 +88,9 @@ checkButton.addEventListener("click",()=>{
         message.innerHTML= "Game Over! Dont give up.";
         checkButton.disabled=true;
         inputValue.disabled=true;
-        
         document.querySelector(".attempt_left").style.display="none";
-        audio.play(); 
+        loser.play();
+       
   
         //GAMEOVER
     }
@@ -91,11 +98,12 @@ checkButton.addEventListener("click",()=>{
     
 
 
-})
+});
 
 newGame.addEventListener("click", () => {
     window.location.reload(false);
     inputValue.focus();
+  
 
 });
 
@@ -103,8 +111,8 @@ newGame.addEventListener("click", () => {
 
 
 inputValue.addEventListener("keydown",(event)=>{
-    if(event.keycode==13){
-      checkButton.onclick();
+    if(event.code==13){
+      checkButton.click();
     }
   
   });
