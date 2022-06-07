@@ -35,7 +35,7 @@ console.log(randomNumber);
 console.log(typeof attemptLeft);
 
 
-
+//*========================CHECKBUTTON=============================*
 checkButton.addEventListener("click",()=>{
 
     if(attemptLeft>1){
@@ -98,18 +98,20 @@ checkButton.addEventListener("click",()=>{
 
 });
 
+
+//* =========================NEW GAME==================== */
 newGame.addEventListener("click", () => {
     window.location.reload(false);
-    inputValue.focus();
+    inputValue.value.focus();
   
 
 });
 
 
 
-
+//*=============================KEYDOWN=================*
 inputValue.addEventListener("keydown",(event)=>{
-    if(event.code==13){
+    if(event.code=='Enter'){
       checkButton.click();
     }
   
@@ -123,70 +125,3 @@ inputValue.addEventListener("keydown",(event)=>{
 
 
 
-
-
-/*
-window.onload = () =>{
-    const guessNumber = document.querySelector("span");
-    const inputArea = document.getElementsByClassName("input")[0];
-    const checkButton = document.querySelector(".submit");
-    const attempNumber = document.querySelector(".attempt");
-    const resultGame = document.querySelector(".result");
-    const newGame = document.querySelector(".new-game");
-    const container = document.querySelector(".container");
-
-    let minNum = 1;
-    let maxNum = 100;
-    let attempt = 5;
-
-    const randomNumber = Math.floor(Math.random()*100+1);
-    console.log(randomNumber);
-
-    
-    
-    checkButton.addEventListener("click",() => {
-        inputArea.focus();
-
-         if (attempt == 0){
-            resultGame.innerHTML= "Game Over! Dont give up.";
-            checkButton.disabled=true;
-            inputArea.disabled=true;
-            attempNumber.style.display="none";
-
-        }else if(+ inputArea.value == randomNumber){
-            resultGame.innerHTML = "Congratulations"
-            checkButton.disabled=true;
-            inputArea.disabled=true;
-           
-        }else if(+ inputArea.value <= 0 || + inputArea.value > 100 || + inputArea.value == ""  ){
-            setTimeout(function(){
-                alert("ENTER A VALID NUMBER");
-            },500);
-            
-        
-        }else if(+ inputArea.value > randomNumber){
-            attempt--;
-            attempNumber.innerHTML = `Total balls : ${attempt}`;
-            maxNum = + inputArea.value;
-            guessNumber.innerHTML = `(${minNum} and ${maxNum})`;
-            inputArea.value="";
-
-        }else if(+inputArea.value < randomNumber ){
-            attempt--;
-            attempNumber.innerHTML =  `Total balls : ${attempt}`;
-            minNum = + inputArea.value;
-            guessNumber.innerHTML = `(${minNum} and ${maxNum})`;
-            inputArea.value="";
-        }
-  
-    });
-
-    
-   
-    newGame.addEventListener("click", () => {
-        window.location.reload(false);
-
-    });
-    
-}
-*/
