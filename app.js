@@ -32,7 +32,7 @@ let loser=document.getElementById("loser");
 const randomNumber = Math.floor(Math.random()*100+1);
 
 console.log(randomNumber);
-console.log(typeof attemptLeft);
+//console.log(typeof attemptLeft);
 
 
 //*========================CHECKBUTTON=============================*
@@ -43,7 +43,7 @@ checkButton.addEventListener("click",()=>{
 
         let guess=Number(inputValue.value);
 
-            if(guess < 0 || guess > 100){
+            if(guess <= 0 || guess > 100){
                 alert("Please enter valid a number")
                
                 attemptLeft --;
