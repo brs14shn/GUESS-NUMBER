@@ -43,7 +43,7 @@ checkButton.addEventListener("click",()=>{
 
         let guess=Number(inputValue.value);
 
-            if(guess <= 0 || guess > 100 || guess=="" || !isNaN(guess)){
+            if(guess <= 0 || guess > 100 || guess=="" || isNaN(guess)){
                 alert("Please enter valid a number")
                
                 attemptLeft --;
