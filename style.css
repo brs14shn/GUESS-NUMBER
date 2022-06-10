@@ -141,4 +141,12 @@ button:active{
         
         display: inline-block;
     }
+    .attempt_left,p.p1{
+        font-size: 1.2rem;
+   
+    }
+    h1{
+        font-size: 2rem;
+    }
+   
 }
